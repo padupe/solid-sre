@@ -1,10 +1,10 @@
 # SOLID - O que é?
 
-**S**ingle Responsibility Principle (_Princípio da Responsabilidade Única_)
-**O**pen Closed Principle (_Princípio Aberto/Fechado_)
-**L**iskov Substitution Principle (_Princípio da substituição de Liskov_)
-**I**nterface Segregation Principle (_Princípio da Segregação da Interface_)
-**D**ependency Inversion Principle (_Princípio da Inversão da Dependência_)
+**S**ingle Responsibility Principle (_Princípio da Responsabilidade Única_)<br>
+**O**pen Closed Principle (_Princípio Aberto/Fechado_)<br>
+**L**iskov Substitution Principle (_Princípio da substituição de Liskov_)<br>
+**I**nterface Segregation Principle (_Princípio da Segregação da Interface_)<br>
+**D**ependency Inversion Principle (_Princípio da Inversão da Dependência_)<br>
 
 ---
 
