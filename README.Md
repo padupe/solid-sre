@@ -17,6 +17,11 @@
 
 ### Comandos Úteis
 
+Iniciando a Aplicação:
+```bash
+yarn dev
+```
+
 Formatação utilizando Prettier:
 ```bash
 yarn format
