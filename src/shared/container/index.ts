@@ -3,6 +3,6 @@ import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepositor
 import { container } from 'tsyringe';
 
 container.registerSingleton<IUsersRepository>(
-  'UsersRepository',
+  "UsersRepository",
   UsersRepository
 );

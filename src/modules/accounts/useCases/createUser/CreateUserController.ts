@@ -13,7 +13,7 @@ class CreateUserController {
       email,
     });
 
-    return response.status(201).json({ msg: 'User created!' }).send();
+    return response.status(201).send();
   }
 }
 
