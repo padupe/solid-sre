@@ -1,19 +1,17 @@
-import { Request, Response } from "express";
-import { container } from "tsyringe";
-import { AuthUserUseCase } from "./AuthUserUseCase";
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
+import { AuthUserUseCase } from './AuthUserUseCase';
 
 class AuthUserController {
+  async handle(request: Request, response: Response): Promise<Response> {
+    const { email, password } = request.body;
 
-    async handle(request: Request, response: Response): Promise<Response> {
+    const authUserUseCase = container.resolve(AuthUserUseCase);
 
-        const { email, password } = request.body;
+    const executeAuth = await authUserUseCase.execute({ email, password });
 
-        const authUserUseCase = container.resolve(AuthUserUseCase);
-
-        const executeAuth = await authUserUseCase.execute({ email, password });
-
-        return response.json(executeAuth);
-    };
-};
+    return response.json(executeAuth);
+  }
+}
 
 export { AuthUserController };
