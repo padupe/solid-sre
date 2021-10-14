@@ -5,11 +5,10 @@ import { inject, injectable } from 'tsyringe';
 
 @injectable()
 class CreateUserUseCase {
-
   constructor(
-        @inject("UsersRepository")
-        private usersRepository: IUsersRepository
-    ){};
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository
+  ) {}
 
   async execute({ name, password, email }: ICreateUserDTO): Promise<void> {
     const verifyUserAlreadyExists = await this.usersRepository.findByEmail(
