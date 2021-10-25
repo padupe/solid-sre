@@ -10,11 +10,8 @@ class Squad {
     @Column()
     name: string;
 
-    @ManyToOne(() => User)
-    @JoinColumn({ name: 'user_id'})
-
     @Column()
-    user_id: string;
+    email: string;
 
     @CreateDateColumn()
     created_at: Date;
