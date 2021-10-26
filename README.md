@@ -56,3 +56,8 @@ username:   sre
 password:   solid
 database:   solid-sre
 ```
+#
+
+## Usuário Admin
+paulo.peixoto@madeiramadeira.com.br
+senha123
