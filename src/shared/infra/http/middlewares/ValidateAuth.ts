@@ -1,12 +1,12 @@
 import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/UsersRepository';
-import { Request, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
 
 interface IPayload {
   sub: string;
 }
 
-export async function ValidateAuth(request: Request, next: NextFunction) {
+export async function ValidateAuth(request: Request, response: Response, next: NextFunction) {
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
