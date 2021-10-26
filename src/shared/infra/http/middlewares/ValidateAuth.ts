@@ -1,4 +1,5 @@
 import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/UsersRepository';
+import { AppError } from '@shared/errors/AppError';
 import { Request, Response, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
 
@@ -10,7 +11,7 @@ export async function ValidateAuth(request: Request, response: Response, next: N
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
-    throw new Error('Token missing!');
+    throw new AppError('Token missing!', 404);
   }
 
   const [, token] = authHeader.split(' ');
@@ -22,7 +23,7 @@ export async function ValidateAuth(request: Request, response: Response, next: N
 
     const userAuth = usersRepository.findById(user_id);
     if (!userAuth) {
-      throw new Error('User does not exists!');
+      throw new AppError('User does not exists!', 401);
     }
 
     request.user = {
@@ -31,6 +32,6 @@ export async function ValidateAuth(request: Request, response: Response, next: N
 
     next();
   } catch {
-    throw new Error('Invalid Token!');
+    throw new AppError('Invalid Token!', 401);
   }
 }
