@@ -1,0 +1,3 @@
+class ListSquadsController {}
+
+export { ListSquadsController };

@@ -19,7 +19,7 @@ export async function ValidateAuth(
     throw new AppError('Token missing!', 404);
   }
 
-  const [, token] = authHeader.split(" ");
+  const [, token] = authHeader.split(' ');
 
   try {
     const { sub: user_id } = verify(token, 'SolidSRE') as IPayload;
@@ -37,7 +37,7 @@ export async function ValidateAuth(
 
     next();
   } catch {
-    console.log('Invalid Token')
+    console.log('Invalid Token');
     throw new AppError('Invalid Token!', 401);
   }
 }
