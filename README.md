@@ -20,7 +20,7 @@
 
 1 Clone o Repositório
 ```bash
-git clone ...
+git clone https://github.com/padupe/solid-sre
 ```
 
 2 Instale as dependências
