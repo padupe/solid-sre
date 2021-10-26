@@ -2,7 +2,11 @@ import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/Us
 import { AppError } from '@shared/errors/AppError';
 import { Request, Response, NextFunction } from 'express';
 
-export async function ValidateAdmin(request: Request, response: Response, next: NextFunction) {
+export async function ValidateAdmin(
+  request: Request,
+  response: Response,
+  next: NextFunction
+) {
   const { id } = request.user;
 
   const usersRepository = new UsersRepository();
