@@ -1,5 +1,6 @@
 import { Squad } from '@modules/squads/infra/typeorm/entities/Squad';
 import { ISquadRepository } from '@modules/squads/repositories/ISquadRepository';
+import { AppError } from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
 
 interface IRequest {
@@ -18,7 +19,7 @@ class CreateSquadUseCase {
     const squadAlreadyExistsName = await this.squadsRepository.findByName(name);
 
     if (squadAlreadyExistsName) {
-      throw new Error('Squad aldready exists!');
+      throw new AppError('Squad aldready exists!', 404);
     }
 
     const squadAlreadyExistsEmail = await this.squadsRepository.findByEmail(
@@ -26,7 +27,7 @@ class CreateSquadUseCase {
     );
 
     if (squadAlreadyExistsEmail) {
-      throw new Error('Squad aldready exists!');
+      throw new AppError('Squad aldready exists!', 404);
     }
 
     const newSquad = await this.squadsRepository.create({
