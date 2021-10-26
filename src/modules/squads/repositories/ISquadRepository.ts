@@ -1,5 +1,5 @@
 import { ICreateSquadDTO } from "@modules/squads/dtos/ICreateSquadDTO";
-import { Squad } from "../entities/Squad";
+import { Squad } from "../infra/typeorm/entities/Squad";
 
 
 interface ISquadRepository {
