@@ -16,6 +16,20 @@
 
 #
 
+### Utilizando a Aplicação
+
+1 Clone o Repositório
+```bash
+git clone ...
+```
+
+2 Instale as dependências
+```
+yarn install
+```
+
+#
+
 ### Comandos Úteis
 
 Iniciando a Aplicação:
