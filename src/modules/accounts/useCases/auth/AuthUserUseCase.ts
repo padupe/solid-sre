@@ -1,4 +1,5 @@
 import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
+import { AppError } from '@shared/errors/AppError';
 import { compare } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 import { inject, injectable } from 'tsyringe';
@@ -26,12 +27,12 @@ class AuthUserUseCase {
   async execute({ email, password }: IRequest): Promise<IResponse> {
     const verifyEmailUser = await this.usersRepository.findByEmail(email);
     if (!verifyEmailUser) {
-      throw new Error('User or Password Incorrect!');
+      throw new AppError('User or Password Incorrect!', 401);
     }
 
     const verifyPassUser = await compare(password, verifyEmailUser.password);
     if (!verifyPassUser) {
-      throw new Error('User or Password Incorrect!');
+      throw new AppError('User or Password Incorrect!', 401);
     }
 
     const generateTokenJWT = sign({}, 'SolidSRE', {
