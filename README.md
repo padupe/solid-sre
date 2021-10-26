@@ -12,6 +12,7 @@
 
 ### Requisitos
 - Node.js v.14
+- Docker
 
 #
 
@@ -25,4 +26,19 @@ yarn dev
 Formatação utilizando Prettier:
 ```bash
 yarn format
+```
+
+Subir o Banco de Dados com Docker:
+```bash
+docker-compose up
+```
+
+#
+
+## Dados de Acesso ao Banco de Dados
+```javascript
+host:       localhost
+username:   sre
+password:   solid
+database:   solid-sre
 ```
