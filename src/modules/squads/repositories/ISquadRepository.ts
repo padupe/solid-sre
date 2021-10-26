@@ -5,6 +5,7 @@ interface ISquadRepository {
   create({ name, email }: ICreateSquadDTO): Promise<Squad>;
   findByName(name): Promise<Squad>;
   findByEmail(email): Promise<Squad>;
+  list(): Promise<Squad[]>;
 }
 
 export { ISquadRepository };
