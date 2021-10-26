@@ -36,6 +36,11 @@ class SquadsRepository implements ISquadRepository {
 
     return findSquadByEmail;
   }
+
+  async list(): Promise<Squad[]> {
+    const showSquads = await this.repository.find();
+    return showSquads;
+  }
 }
 
 export { SquadsRepository };
