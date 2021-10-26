@@ -2,6 +2,7 @@ import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/Us
 import { AppError } from '@shared/errors/AppError';
 import { Request, Response, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
+import { SimpleConsoleLogger } from 'typeorm';
 
 interface IPayload {
   sub: string;
@@ -18,7 +19,7 @@ export async function ValidateAuth(
     throw new AppError('Token missing!', 404);
   }
 
-  const [, token] = authHeader.split(' ');
+  const [, token] = authHeader.split(" ");
 
   try {
     const { sub: user_id } = verify(token, 'SolidSRE') as IPayload;
@@ -36,6 +37,7 @@ export async function ValidateAuth(
 
     next();
   } catch {
+    console.log('Invalid Token')
     throw new AppError('Invalid Token!', 401);
   }
 }
