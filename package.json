@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
-    "format": "npx prettier '**/*.ts' '**/*.js' --write"
+    "format": "npx prettier '**/*.ts' '**/*.js' --write",
+    "seed:config": "ts-node ./node_modules/typeorm-seeding/dist/cli.js config",
+    "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -19,6 +21,7 @@
     "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.6.0",
     "typeorm": "^0.2.38",
+    "typeorm-seeding": "^1.6.1",
     "uuid": "^8.3.2",
     "uuidv4": "^6.2.12"
   },
