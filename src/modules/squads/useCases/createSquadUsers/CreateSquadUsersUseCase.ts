@@ -1,0 +1,7 @@
+
+
+class CreateSquadUsersUseCase {
+
+};
+
+export { CreateSquadUsersUseCase };

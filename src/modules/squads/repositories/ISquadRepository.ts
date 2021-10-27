@@ -3,6 +3,7 @@ import { Squad } from '../infra/typeorm/entities/Squad';
 
 interface ISquadRepository {
   create({ name, email }: ICreateSquadDTO): Promise<Squad>;
+  findById(id: string): Promise<Squad>;
   findByName(name): Promise<Squad>;
   findByEmail(email): Promise<Squad>;
   list(): Promise<Squad[]>;

@@ -7,6 +7,7 @@ import {
   JoinTable,
   ManyToMany,
   ManyToOne,
+  OneToMany,
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -22,6 +23,10 @@ class Squad {
 
   @Column()
   email: string;
+
+  @ManyToOne(() => User)
+  @JoinColumn({name: 'user_id'})
+  users: User[];
 
   @CreateDateColumn()
   created_at: Date;
