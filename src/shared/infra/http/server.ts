@@ -31,4 +31,3 @@ app.use(
 app.listen(process.env.PORT, () =>
   console.log(`Server is running in port ${process.env.PORT}! 🚀`)
 );
-// app.listen(7777, () => console.log(`Server is running! 🚀`));

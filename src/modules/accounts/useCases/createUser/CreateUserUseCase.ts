@@ -17,7 +17,6 @@ class CreateUserUseCase {
       email
     );
 
-    console.log(verifyUserAlreadyExists);
     if (verifyUserAlreadyExists) {
       throw new AppError('User Already Exists!', 404);
     }
