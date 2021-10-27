@@ -10,8 +10,7 @@
     "cli": {
       "migrationsDir": "./src/shared/infra/typeorm/migrations"
     },
-    "synchronize": true,
-    "factories": ["src/database/factories/**/*{.ts,.js}"],
-    "seeds": ["src/database/seeds/**/*{.ts,.js}"]
+    "factories": ["./src/shared/infra/typeorm/factories/*.ts"],
+    "seeds": ["./src/shared/infra/typeorm/seeds/*.ts"]
   }
   

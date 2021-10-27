@@ -3,6 +3,7 @@ import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepositor
 import { AppError } from '@shared/errors/AppError';
 import { hash } from 'bcrypt';
 import { inject, injectable } from 'tsyringe';
+import { v4 as uuidv4 } from 'uuid';
 
 @injectable()
 class CreateUserUseCase {
@@ -15,9 +16,15 @@ class CreateUserUseCase {
     const verifyUserAlreadyExists = await this.usersRepository.findByEmail(
       email
     );
+
+    console.log(verifyUserAlreadyExists);
     if (verifyUserAlreadyExists) {
       throw new AppError('User Already Exists!', 404);
     }
+
+    // if (!verifyUserAlreadyExists.id && (verifyUserAlreadyExists.id == undefined || verifyUserAlreadyExists.id == null)) {
+    //   verifyUserAlreadyExists.id = uuidv4()
+    // }
 
     const passHash = await hash(password, 8);
 

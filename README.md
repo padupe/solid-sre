@@ -24,33 +24,38 @@ git clone https://github.com/padupe/solid-sre
 ```
 
 2 Instale as dependências
-```
+```bash
 yarn install
+```
+
+3 Suba o Banco de Dados com Docker
+```bash
+docker-compose up
+```
+
+4 Popule o Banco de Dados
+```bash
+yarn seed
+```
+
+5 Inicie a Aplicação
+```bash
+yarn dev
 ```
 
 #
 
 ### Comandos Úteis
 
-Iniciando a Aplicação:
-```bash
-yarn dev
-```
-
 Formatação utilizando Prettier:
 ```bash
 yarn format
 ```
 
-Subir o Banco de Dados com Docker:
-```bash
-docker-compose up
-```
-
 #
 
-## Dados de Acesso ao Banco de Dados
-```javascript
+## Credenciais de Acesso ao Banco de Dados
+```bash
 host:       localhost
 username:   sre
 password:   solid
@@ -59,5 +64,7 @@ database:   solid-sre
 #
 
 ## Usuário Admin
-paulo.peixoto@madeiramadeira.com.br
-senha123
+```bash
+E-mail:     admin@email.com
+Password:   senha1234
+```
