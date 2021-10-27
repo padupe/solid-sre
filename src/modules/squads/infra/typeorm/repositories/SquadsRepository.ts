@@ -21,6 +21,11 @@ class SquadsRepository implements ISquadRepository {
     return newSquad;
   }
 
+  async findById(id: string): Promise<Squad> {
+    const findSquadById = await this.repository.findOne(id);
+    return findSquadById;
+  };
+
   async findByName(name: any): Promise<Squad> {
     const findSquadByName = await this.repository.findOne({
       name,
