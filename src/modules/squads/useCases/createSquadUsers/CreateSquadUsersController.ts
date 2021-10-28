@@ -4,12 +4,13 @@ import { CreateSquadUsersUseCase } from './CreateSquadUsersUseCase';
 
 class CreateSquadUsersController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { squad_id, users_id } = request.body;
+    const { id } = request.params;
+    const { users_id } = request.body;
 
     const createSquadUsersUsecase = container.resolve(CreateSquadUsersUseCase);
 
     const squadUsers = await createSquadUsersUsecase.execute({
-      squad_id,
+      squad_id: id,
       users_id,
     });
 
