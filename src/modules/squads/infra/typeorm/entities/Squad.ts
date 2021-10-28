@@ -1,4 +1,4 @@
-import { User } from '@modules/accounts/infra/typeorm/entities/User';
+import { User } from '../../../../accounts/infra/typeorm/entities/User';
 import {
   Column,
   CreateDateColumn,
@@ -24,9 +24,13 @@ class Squad {
   @Column()
   email: string;
 
-  @ManyToOne(() => User)
-  @JoinColumn({ name: 'user_id' })
-  users: User[];
+  @ManyToMany(() => User)
+  @JoinTable({
+    name: 'users-squads',
+    joinColumns: [ { name: 'squad_id' }],
+    inverseJoinColumns: [ { name: 'user_id' }]
+  })
+  users: User[]
 
   @CreateDateColumn()
   created_at: Date;
