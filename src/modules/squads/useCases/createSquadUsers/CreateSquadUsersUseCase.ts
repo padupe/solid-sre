@@ -1,7 +1,7 @@
+import Squad from '@shared/infra/typeorm/seeds/Squad';
 import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 import { ISquadRepository } from '@modules/squads/repositories/ISquadRepository';
 import { AppError } from '@shared/errors/AppError';
-import Squad from '@shared/infra/typeorm/seeds/Squad';
 import { inject, injectable } from 'tsyringe';
 
 interface IRequest {

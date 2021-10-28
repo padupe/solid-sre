@@ -18,6 +18,11 @@ squadsRoutes.post(
 );
 
 squadsRoutes.get('/', ValidateAuth, listSquadsController.handle);
-squadsRoutes.post('/users/:id', ValidateAuth, ValidateAdmin, createSquadController.handle)
+squadsRoutes.post(
+  '/users/:id',
+  ValidateAuth,
+  ValidateAdmin,
+  createSquadController.handle
+);
 
 export { squadsRoutes };

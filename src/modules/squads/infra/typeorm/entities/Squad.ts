@@ -3,11 +3,8 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  JoinColumn,
   JoinTable,
   ManyToMany,
-  ManyToOne,
-  OneToMany,
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -27,10 +24,10 @@ class Squad {
   @ManyToMany(() => User)
   @JoinTable({
     name: 'users-squads',
-    joinColumns: [ { name: 'squad_id' }],
-    inverseJoinColumns: [ { name: 'user_id' }]
+    joinColumns: [{ name: 'squad_id' }],
+    inverseJoinColumns: [{ name: 'user_id' }],
   })
-  users: User[]
+  users: User[];
 
   @CreateDateColumn()
   created_at: Date;
