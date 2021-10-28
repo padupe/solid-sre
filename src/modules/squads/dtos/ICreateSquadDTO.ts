@@ -1,4 +1,4 @@
-import { User } from "@modules/accounts/infra/typeorm/entities/User";
+import { User } from '@modules/accounts/infra/typeorm/entities/User';
 
 interface ICreateSquadDTO {
   name: string;

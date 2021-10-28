@@ -25,7 +25,7 @@ class Squad {
   email: string;
 
   @ManyToOne(() => User)
-  @JoinColumn({name: 'user_id'})
+  @JoinColumn({ name: 'user_id' })
   users: User[];
 
   @CreateDateColumn()
