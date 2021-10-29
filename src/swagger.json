@@ -1,0 +1,11 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Squads/Users",
+        "description": "This is an API applying SOLID concepts",
+        "version": "1.0.0",
+        "contact": {
+            "email": "peixoto.pauloeduardo@gmail.com"
+        }
+    }
+}
