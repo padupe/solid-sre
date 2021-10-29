@@ -1,3 +1,4 @@
+import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { ICreateSquadDTO } from '@modules/squads/dtos/ICreateSquadDTO';
 import { ISquadRepository } from '@modules/squads/repositories/ISquadRepository';
 import { getRepository, Repository } from 'typeorm';
@@ -15,12 +16,18 @@ class SquadsRepository implements ISquadRepository {
       name,
       email,
       users,
-      id
+      id,
     });
 
     await this.repository.save(newSquad);
 
     return newSquad;
+  }
+
+  async attachUser(squad: Squad, user: User): Promise<Squad> {
+    squad.users = [user];
+
+    return await this.repository.save(squad);
   }
 
   async findById(id: string): Promise<Squad> {

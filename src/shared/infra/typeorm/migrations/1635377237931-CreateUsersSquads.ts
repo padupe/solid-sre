@@ -7,11 +7,6 @@ export class CreateUsersSquads1635377237931 implements MigrationInterface {
         name: 'users-squads',
         columns: [
           {
-            name: 'id',
-            type: 'uuid',
-            isPrimary: true,
-          },
-          {
             name: 'squad_id',
             type: 'uuid',
           },

@@ -21,21 +21,17 @@ class CreateSquadUsersUseCase {
 
   async execute({ squad_id, users_id }: IRequest): Promise<Squad> {
     const findSquad = await this.squadsRepository.findById(squad_id);
-    console.log('1', findSquad)
 
     if (!findSquad) {
       throw new AppError('Squad does not exists!', 404);
     }
 
     const newUsers = await this.usersRepository.findByIds(users_id);
-    console.log('2', newUsers)
 
     findSquad.users = newUsers;
-    console.log('3', findSquad.users)
 
     await this.squadsRepository.create(findSquad);
 
-    console.log('4', findSquad)
     // @ts-ignore
     return findSquad;
   }

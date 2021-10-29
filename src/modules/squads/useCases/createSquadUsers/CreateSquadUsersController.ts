@@ -5,9 +5,7 @@ import { CreateSquadUsersUseCase } from './CreateSquadUsersUseCase';
 class CreateSquadUsersController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
-    console.log(request.params)
     const { users_id } = request.body;
-    console.log(request.body)
 
     const createSquadUsersUsecase = container.resolve(CreateSquadUsersUseCase);
 
