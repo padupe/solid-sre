@@ -28,6 +28,7 @@ class Squad {
     inverseJoinColumns: [{ name: 'user_id' }],
   })
   users: User[];
+  
 
   @CreateDateColumn()
   created_at: Date;

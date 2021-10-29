@@ -22,7 +22,7 @@ squadsRoutes.post(
   '/users/:id',
   ValidateAuth,
   ValidateAdmin,
-  createSquadController.handle
+  createSquadUsersController.handle
 );
 
 export { squadsRoutes };

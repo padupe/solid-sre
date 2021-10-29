@@ -10,10 +10,12 @@ class SquadsRepository implements ISquadRepository {
     this.repository = getRepository(Squad);
   }
 
-  async create({ name, email }: ICreateSquadDTO): Promise<Squad> {
+  async create({ name, email, users, id }: ICreateSquadDTO): Promise<Squad> {
     const newSquad = await this.repository.create({
       name,
       email,
+      users,
+      id
     });
 
     await this.repository.save(newSquad);
