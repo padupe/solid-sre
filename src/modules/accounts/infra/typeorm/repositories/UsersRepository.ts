@@ -9,7 +9,7 @@ class UsersRepository implements IUsersRepository {
   constructor() {
     this.repository = getRepository(User);
   }
-  
+
   async create({ name, password, email, id }: ICreateUserDTO): Promise<User> {
     const newUser = this.repository.create({
       name,
