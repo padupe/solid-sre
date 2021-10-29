@@ -59,7 +59,13 @@ yarn format
 
 #
 
-## Credenciais de Acesso ao Banco de Dados
+### MER - Modelo Entidade Relacionamento
+
+![img](https://github.com/padupe/solid-sre/blob/master/src/shared/images/solid.png)
+
+#
+
+### Credenciais de Acesso ao Banco de Dados
 ```bash
 host:       localhost
 username:   sre
@@ -68,7 +74,7 @@ database:   solid-sre
 ```
 #
 
-## Usuário Admin
+### Usuário Admin
 ```bash
 E-mail:     admin@email.com
 Password:   senha1234
