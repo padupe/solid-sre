@@ -33,12 +33,17 @@ yarn install
 docker-compose up
 ```
 
-4 Popule o Banco de Dados
+4 Rode as Migrations
+```bash
+yarn typeorm migration:run
+```
+
+5 Popule o Banco de Dados
 ```bash
 yarn seed
 ```
 
-5 Inicie a Aplicação
+6 Inicie a Aplicação
 ```bash
 yarn dev
 ```
