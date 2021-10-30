@@ -79,3 +79,11 @@ database:   solid-sre
 E-mail:     admin@email.com
 Password:   senha1234
 ```
+
+#
+
+### Documentação
+
+Confira a Documentação para uso desta API em:
+http://localhost:7777/docs
+> **IMPORTANTE:** necessário rodar o comando <code>yarn dev</code> para iniciar o Servidor
