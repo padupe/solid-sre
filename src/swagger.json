@@ -108,6 +108,40 @@
                     }
                 }
             }
+        },
+        "/squads": {
+            "post": {
+                "tags": ["Squad"],
+                "summary": "Create a Squad",
+                "description": "Create a new Squad",
+                "security": [{ "bearerAuth": []}],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Squad" 
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Squad Created"
+                    },
+                    "401": {
+                        "description": "Invalid Token"
+                    },
+                    "404": [
+                        {
+                        "description": "Token missing!"
+                    },
+                    {
+                        "description": "Squad Already Exists!"
+                    }
+                ]
+                    
+                }
+            }
         }
     },
     "definitions": {
@@ -128,6 +162,21 @@
                 "name": "User Test",
                 "email": "usertest@email.com",
                 "password": "passwordTest"
+            }
+        },
+        "Squad": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "name": "SRE Team",
+                "email": "sre-team@madeiramadeira.com.br"
             }
         }
     },

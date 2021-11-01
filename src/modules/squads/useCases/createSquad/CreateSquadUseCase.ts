@@ -19,7 +19,7 @@ class CreateSquadUseCase {
     const squadAlreadyExistsName = await this.squadsRepository.findByName(name);
 
     if (squadAlreadyExistsName) {
-      throw new AppError('Squad aldready exists!', 404);
+      throw new AppError('Squad aldready exists!', 400);
     }
 
     const squadAlreadyExistsEmail = await this.squadsRepository.findByEmail(
@@ -27,7 +27,7 @@ class CreateSquadUseCase {
     );
 
     if (squadAlreadyExistsEmail) {
-      throw new AppError('Squad aldready exists!', 404);
+      throw new AppError('Squad aldready exists!', 400);
     }
 
     const newSquad = await this.squadsRepository.create({
