@@ -61,7 +61,7 @@ yarn format
 
 ### MER - Modelo Entidade Relacionamento
 <div align="center">
-    ![img](https://github.com/padupe/solid-sre/blob/master/src/shared/images/solid.png)
+    <img align="center" src=https://github.com/padupe/solid-sre/blob/master/src/shared/images/solid.png>
 </div>
 #
 
