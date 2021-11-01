@@ -60,8 +60,9 @@ yarn format
 #
 
 ### MER - Modelo Entidade Relacionamento
-
-![img](https://github.com/padupe/solid-sre/blob/master/src/shared/images/solid.png)
+<div align="center">
+    <img align="center" src=https://github.com/padupe/solid-sre/blob/master/src/shared/images/solid.png>
+</div>
 
 #
 
@@ -79,3 +80,11 @@ database:   solid-sre
 E-mail:     admin@email.com
 Password:   senha1234
 ```
+
+#
+
+### Documentação
+
+Confira a Documentação para uso desta API em:
+http://localhost:7777/docs
+> **IMPORTANTE:** necessário rodar o comando <code>yarn dev</code> para iniciar o Servidor
