@@ -128,18 +128,92 @@
                     "201": {
                         "description": "Squad Created"
                     },
+                    "400": {
+                        "description": "Squad Already Exists!"
+                    },
                     "401": {
                         "description": "Invalid Token"
                     },
-                    "404": [
-                        {
+                    "404": {
                         "description": "Token missing!"
+                    }                    
+                }
+            },
+            "get": {
+                "tags": ["Squad"],
+                "summary": "Show all Squads",
+                "description": "List all registred Squads",
+                "security": [{ "bearerAuth": []}],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "created_at": {
+                                                "type": "string"
+                                            },
+                                            "updated_at": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     },
-                    {
-                        "description": "Squad Already Exists!"
+                    "401": {
+                        "description": "Invalid Token"
+                    },
+                    "404": {
+                        "description": "Token missing!"
                     }
-                ]
-                    
+                }
+            }
+        },
+        "/squads/users/{id}": {
+            "post": {
+                "tags": ["Squad"],
+                "summary": "User Registration in the Squad",
+                "description": "It allows one or more user to be associated with a registered Squad",
+                "security": [{ "bearerAuth": []}],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Squad ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/SquadUsers"
+                            }
+                        }
+                    }    
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Invalid Token"
+                    }
                 }
             }
         }
@@ -178,8 +252,19 @@
                 "name": "SRE Team",
                 "email": "sre-team@madeiramadeira.com.br"
             }
-        }
-    },
+        },
+        "SquadUsers": {
+            "type": "object",
+            "properties": {
+                "users_id": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                        }
+                    }
+                }
+            }
+        },
     "components": {
         "securitySchemes": {
             "bearerAuth": {
