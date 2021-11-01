@@ -71,7 +71,7 @@
             "get": {
                 "tags": ["User"],
                 "summary": "Show all Users",
-                "description": "List all registred Users",
+                "description": "List all registered Users",
                 "responses": {
                     "200": {
                         "description": "Success",
@@ -142,7 +142,7 @@
             "get": {
                 "tags": ["Squad"],
                 "summary": "Show all Squads",
-                "description": "List all registred Squads",
+                "description": "List all registered Squads",
                 "security": [{ "bearerAuth": []}],
                 "responses": {
                     "200": {
@@ -260,11 +260,16 @@
                     "type": "array",
                     "items": {
                         "type": "string"
-                        }
                     }
                 }
+            },
+            "example": {
+                "users_id": [
+                    "id_user_registered"
+                ]
             }
-        },
+        }
+    },
     "components": {
         "securitySchemes": {
             "bearerAuth": {
