@@ -20,4 +20,5 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: padupe/check-pr-title@v1
+      #- uses: padupe/check-pr-title@v1
+      - uses: archaic10/pr-pattern-title@v1
