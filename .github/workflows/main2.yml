@@ -23,4 +23,4 @@ jobs:
         id: "issue"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: padupe/check-pr-title@v1
-      - run: echo "${{steps.issue.outputs.DATA}}"
+      - run: echo ${{steps.issue.outputs.DATA}}
