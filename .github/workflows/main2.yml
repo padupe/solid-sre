@@ -21,4 +21,4 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       #- uses: padupe/check-pr-title@v1
-      - uses: archaic10/pr-pattern-title@v2
+      - uses: archaic10/pr-pattern-title@v3
