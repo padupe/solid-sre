@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:      
-      - uses: madeiramadeirabr/action-check-title-pr-pattern@staging
+      - uses: madeiramadeirabr/action-check-title-pr-pattern@production
