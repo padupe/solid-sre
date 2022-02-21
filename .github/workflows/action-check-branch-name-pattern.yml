@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:      
-      - uses: padupe/check-pr-title@v1
+      - uses: padupe/check-pr-title@v4
